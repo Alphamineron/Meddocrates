@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inventories",
+  "info": {
+    "name": "Rack"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "MedUID": {
+      "unique": true,
+      "model": "medicine"
+    },
+    "Quantity": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    }
+  }
+}

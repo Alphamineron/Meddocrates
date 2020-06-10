@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sales",
+  "info": {
+    "name": "Sale"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "SaleDate": {
+      "type": "date",
+      "required": true
+    },
+    "MedUID": {
+      "model": "medicine",
+      "via": "sales"
+    },
+    "QuantitySold": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "Revenue": {
+      "type": "decimal"
+    }
+  }
+}

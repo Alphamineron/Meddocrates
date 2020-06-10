@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medicines",
+  "info": {
+    "name": "Medicine"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Desc": {
+      "type": "text"
+    },
+    "Price": {
+      "type": "decimal",
+      "required": true
+    },
+    "ExpiryDate": {
+      "type": "date",
+      "required": true,
+      "default": "2021-11-10T06:30:00.000Z"
+    },
+    "sales": {
+      "via": "MedUID",
+      "collection": "sale"
+    },
+    "vendor": {
+      "via": "MedUID",
+      "model": "vendor"
+    }
+  }
+}
