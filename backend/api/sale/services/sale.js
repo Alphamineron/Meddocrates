@@ -5,4 +5,9 @@
  * to customize this service
  */
 
-module.exports = {};
+module.exports = {
+    find(params, populate) {
+        // console.log("hello")
+        return strapi.query('sale').find(params, populate);
+    },
+};
