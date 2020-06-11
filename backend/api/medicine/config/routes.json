@@ -10,6 +10,14 @@
     },
     {
       "method": "GET",
+      "path": "/medicines/c/:medUID",
+      "handler": "medicine.check_medUID",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/medicines/expired",
       "handler": "medicine.expired",
       "config": {

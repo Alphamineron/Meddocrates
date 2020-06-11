@@ -34,5 +34,18 @@ module.exports = {
         });
 
         return expired;
-    }
+    },
+
+    async check_medUID(ctx) {
+        const medicines = await strapi.services.medicine.find(ctx.query);
+
+        var flag = false;
+
+        await medicines.forEach(function (entry) {
+                if(Number(entry.id) === Number(ctx.params["medUID"])) {
+                    flag = true;
+                }
+        });
+        return { valid: flag }
+    },
 };
