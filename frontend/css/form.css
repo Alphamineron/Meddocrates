@@ -77,6 +77,28 @@ input:valid~label {
 }
 
 
+/* SUBMIT BUTTON ================================= */
+
+.Submit {
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    color: aliceblue;
+    border-bottom: 1px solid aliceblue;
+    transition: all .2s ease-in-out;
+}
+
+.Submit:hover {
+    background: aliceblue;
+    color: black;
+    box-shadow: 10px 10px 1px rgba(180, 180, 180, 0.1);
+    border-radius: 1px;
+    transform: translateY(-5px);
+}
+
+
 /* BOTTOM BARS ================================= */
 
 .bar {
