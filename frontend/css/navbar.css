@@ -1,0 +1,161 @@
+/* ADDING SMART NAV BAR STYLING ============================================ */
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+.headroom {
+	will-change: transform;
+	-webkit-transition: -webkit-transform 200ms linear;
+	transition: -webkit-transform 200ms linear;
+	transition: transform 200ms linear;
+	transition: transform 200ms linear, -webkit-transform 200ms linear;
+}
+.headroom--top {
+	border-bottom: none !important;
+}
+.headroom--pinned {
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+	border-bottom: 1px solid rgb(0, 211, 158);
+}
+.headroom--unpinned {
+	-webkit-transform: translateY(-100%);
+	transform: translateY(-100%);
+	border-bottom: 1px solid rgb(0, 211, 158);
+}
+
+header {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #121212;
+	z-index: 100;
+}
+
+.nav-link{
+	margin-right: 2em;
+	padding: 0;
+	font-family: "Montserrat", "Roboto", sans-serif;
+	letter-spacing: 2px;
+	line-height: 80px;
+	font-size: 12px;
+}
+
+
+/* ========================================================================= */
+
+.nav-bar {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	font-family: "Montserrat", "Roboto", sans-serif;
+	letter-spacing: 2px;
+}
+
+
+.nav-section{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: space-evenly;
+	    -ms-flex-pack: space-evenly;
+	        justify-content: space-evenly;
+}
+
+
+/* Change this margin-right for the last element in Nav-Bar [$!1] */
+
+
+/* Adding Manipal Logo in the center of the navBar */
+
+
+.nav-img img {
+	max-width: 100%;
+	max-height: 100%;
+	width: 4rem;
+	height: auto;
+	padding: 0;
+	margin: 0;
+}
+
+
+.nav-bar a {
+	text-decoration: none;
+	color: whitesmoke;
+	font-family: "Montserrat", "Roboto", sans-serif;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.nav-bar a::after {
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	content: "";
+	bottom: 0;
+	left: 50%;
+	background: #fff;
+	border-radius: 10px;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.nav-link {
+	color: #7c7c7c;
+	font-size: 2.5rem;
+	letter-spacing: 2px;
+	font-family: "Montserrat", "Roboto", sans-serif;
+	line-height: 80px;
+	text-transform: uppercase;
+}
+
+/* Adding the Underline Effect to the Container of the Nav-Text */
+
+.nav-link:hover a::after {
+	width: 100%;
+	left: 0%;
+}
+
+/* Removing the Underline Effect for the Branding Text */
+
+.nav-logo:hover a::after {
+	width: 0%;
+	left: 50%;
+}
+/* =================================================== */
+
+.nav-bar .nav-logo {
+	font-family: "Montserrat", "Roboto", sans-serif;
+	line-height: 80px;
+	color: #fff;
+	font-size: 15px;
+	letter-spacing: 3px;
+	font-weight: 900;
+	text-transform: uppercase;
+	margin-left: 2em;
+}
+
+@media only screen and (max-width:600px){
+	.nav-link{
+		margin-right: 1em;
+	}
+
+	.nav-logo{
+		margin-left: 1em;
+	}
+}

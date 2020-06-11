@@ -1,0 +1,10 @@
+html,
+body,
+.container,
+.at-column {
+    background: black;
+}
+
+* {
+    color: white;
+}
