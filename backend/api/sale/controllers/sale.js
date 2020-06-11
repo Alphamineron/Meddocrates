@@ -68,7 +68,17 @@ module.exports = {
                 currMonthSales[record.SaleDate] += record.QuantitySold || 0;
             });
         }
-        return currMonthSales
+        // return currMonthSales
+
+        let response = []
+        // Additional Logic for ApexCharts
+        for (const [date, sales] of Object.entries(currMonthSales)) {
+            response.push({
+                label: date,
+                value: sales
+            });
+        }
+        return response
     },
 
     
