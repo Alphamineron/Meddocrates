@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    background: black;
+}
+
+
+#chart {
+    display: block;
+    max-width: 760px;
+    margin: 100px auto;
+    padding: 1rem 1rem;
+
+    opacity: 0.9;
+    border-radius: 10px;
+    background: white;
+    
+    -webkit-box-shadow: 9px 9px 86px -25px rgb(180, 180, 180);
+    -moz-box-shadow: 9px 9px 86px -25px rgba(180, 180, 180);
+    box-shadow: 9px 9px 86px -25px rgba(180, 180, 180);
+}
+
+#timeline-chart .apexcharts-toolbar {
+    opacity: 1;
+    border: 0;
+}
