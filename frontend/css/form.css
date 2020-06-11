@@ -80,22 +80,62 @@ input:valid~label {
 /* SUBMIT BUTTON ================================= */
 
 .Submit {
+    position: relative;
+    overflow: hidden;
     padding: 10px 20px;
     margin-top: 10px;
     font-size: 16px;
-    border: none;
+    background: none;
+    height: 50px;
+    width: 150px;
+    border: 1px solid aliceblue;
+    border-radius: 2px;
+    z-index: 0;
     background: none;
     color: aliceblue;
-    border-bottom: 1px solid aliceblue;
-    transition: all .2s ease-in-out;
+    transition: border .6s ease-in-out;
+    cursor: pointer;
 }
 
 .Submit:hover {
-    background: aliceblue;
-    color: black;
-    box-shadow: 10px 10px 1px rgba(180, 180, 180, 0.1);
-    border-radius: 1px;
-    transform: translateY(-5px);
+    border: 1px solid black;
+}
+
+.Submit::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    top: 100px;
+    height: 300%;
+    transform: rotate(-15deg);
+    width: 300%;
+    background: #54e668;
+    animation: submit-button2 .6s 1 ease-in-out;
+}
+
+.Submit:hover::before {
+    animation: submit-button .6s 1 ease-in-out;
+    top: -100px;
+    left: -10%;
+}
+
+@keyframes submit-button {
+    from {
+        top: 100px;
+    }
+    to {
+        top: -100px;
+    }
+}
+
+@keyframes submit-button2 {
+    to {
+        top: 100px;
+    }
+    from {
+        top: -100px;
+    }
 }
 
 

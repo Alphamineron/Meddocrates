@@ -9,6 +9,12 @@ body {
     background: black;
 }
 
+h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 40px;
+    color: #ffffff;
+    text-align: center;
+}
 
 #chart {
     display: block;

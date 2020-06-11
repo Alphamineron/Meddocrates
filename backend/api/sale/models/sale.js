@@ -18,7 +18,11 @@ module.exports = {
                     Revenue: qSold*price
                 }
             );
-
+            
+            if (typeof result["MedUID"]["id"] === 'undefined') {
+                strapi.query('sale').delete({ id: result["id"] });
+                console.info("Removing Sale Record with id:" + result["id"]);
+            }
 
             // Below code is for maintaining the inventory/racks upon a sale or discarding a sale if it exceeds space
             var promises = [];
