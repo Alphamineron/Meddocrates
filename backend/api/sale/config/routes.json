@@ -10,6 +10,14 @@
     },
     {
       "method": "GET",
+      "path": "/sales/roed/:date/:medUID",
+      "handler": "sale.roed",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/sales/count",
       "handler": "sale.count",
       "config": {
