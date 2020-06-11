@@ -13,11 +13,26 @@ module.exports = {
         let today = new Date();
         let currDateStr = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
-        return medicines.filter(function (entry) {
+        let filteredMeds = medicines.filter(function (entry) {
             let currDate = new Date(currDateStr);
             let ExpiryDate = new Date(entry.ExpiryDate);
 
             return ExpiryDate < currDate;
         });
+
+        var expired = [];
+
+        filteredMeds.forEach(function(data) {
+            expired.push({
+                                "MedUID": data.id,
+                                "MedName": data.Name,
+                                "MedDesc": data.Desc,
+                                "VendorUID": data.vendor.id,
+                                "VendorName": data.vendor.Name,
+                                "VendorAddress": data.vendor.Address,
+            });
+        });
+
+        return expired;
     }
 };
