@@ -1,0 +1,39 @@
+body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h1 {
+    font-size: 40px;
+    color: #08090d;
+    text-align: center;
+}
+
+h1 span {
+    font-size: 25px;
+    color: #477dd7;
+}
+
+h2 {
+    font-family: "Open Sans Condensed", sans-serif;
+    font-size: 18px;
+}
+
+#table-2 {
+    margin: 100px auto;
+}
+
+th {
+    font-weight: 900;
+    padding-bottom: 1rem;
+    padding-right: 10px;
+}
+
+td {
+    padding-right: 10px;
+    text-align: center;
+    padding-bottom: 1.5rem;
+}
+
+.jsl {
+    display: none;
+}
