@@ -94,6 +94,7 @@ input:valid~label {
     background: none;
     color: aliceblue;
     transition: border .6s ease-in-out;
+    cursor: pointer;
 }
 
 .Submit:hover {
