@@ -70,15 +70,30 @@ module.exports = {
         }
         // return currMonthSales
 
+        // const countries = {
+        //     Bfghanistan: 3,
+        //     Zlbania: 9,
+        //     Clgeria: 3
+        // };
+
+        const arrOfArrays = Object.entries(currMonthSales);
+
+        const sorted = arrOfArrays.sort((a, b) => {
+            return a[0].localeCompare(b[0]);
+        });
+
+        console.log(sorted);
+
         let response = []
         // Additional Logic for ApexCharts
         for (const [date, sales] of Object.entries(currMonthSales)) {
-            response.push({
-                label: date,
-                value: sales
-            });
+            // response.push({
+            //     label: date,
+            //     value: sales
+            // });
+            response.push([date, sales]);
         }
-        return response
+        return sorted
     },
 
     
