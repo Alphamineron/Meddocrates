@@ -26,6 +26,14 @@
     },
     {
       "method": "GET",
+      "path": "/sales/recommendation",
+      "handler": "sale.recommendation",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/sales/count",
       "handler": "sale.count",
       "config": {
