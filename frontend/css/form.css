@@ -70,11 +70,17 @@ label {
 /* active state */
 
 input:focus~label,
-input:valid~label {
+input:valid~label:not(.notReq) {
     top: -20px;
     font-size: 14px;
     color: #54e668;
 }
+
+/* input:focus~.notReq {
+    top: reset;
+    font-size: reset;
+    color: reset;
+} */
 
 
 /* SUBMIT BUTTON ================================= */

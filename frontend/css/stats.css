@@ -19,7 +19,7 @@ h1 {
 #chart {
     display: block;
     max-width: 760px;
-    margin: 100px auto;
+    margin: 100px auto 50px auto;
     padding: 1rem 1rem;
 
     opacity: 0.9;
@@ -34,4 +34,84 @@ h1 {
 #timeline-chart .apexcharts-toolbar {
     opacity: 1;
     border: 0;
+}
+
+.container {
+    height: 100vh;
+}
+
+.parent {
+    display: flex;
+    flex-direction: row;
+
+    min-height: 16em;
+    flex: 1 1 40rem;
+    color: rgb(0, 0, 0);
+    margin: 50px 5rem;
+    padding: 4rem 5rem;
+    border-radius: 10px;
+    background: #E5E5E5;
+    
+    -webkit-box-shadow: 9px 9px 86px -25px rgb(180, 180, 180);
+    -moz-box-shadow: 9px 9px 86px -25px rgba(180, 180, 180);
+    box-shadow: 9px 9px 86px -25px rgba(180, 180, 180);
+}
+
+.small-parent {
+    display: flex;
+    flex-direction: row;
+    width: 20rem;
+
+    /* max-height: 5em; */
+    flex: 1 1 40rem;
+    color: rgb(0, 0, 0);
+    margin: 10px auto 50px auto;
+    padding: 3rem 2.5rem;
+    border-radius: 10px;
+    background: #E5E5E5;
+    
+    -webkit-box-shadow: 9px 9px 86px -25px rgb(180, 180, 180);
+    -moz-box-shadow: 9px 9px 86px -25px rgba(180, 180, 180);
+    box-shadow: 9px 9px 86px -25px rgba(180, 180, 180);
+}
+
+.left * {
+    color: black;
+}
+
+.left .Submit {
+    border: 1px solid rgb(0, 0, 0);
+    color: black;
+}
+
+.left .Submit:hover {
+    border: 1px solid white;
+}
+
+.right {
+    height: 16em;
+    width: 100%;    
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.roed {
+    margin: auto;
+}
+
+.roed .dollar {
+    font-size: 10rem;
+    font-weight: 900;
+}
+
+.roed .amt {
+    font-size: 5rem;
+    padding: 10px 30px;
+    margin-left: 10px;
+    border-radius: 17px;
+    background: #ffbb0042;
+    min-width: 285px;
 }
