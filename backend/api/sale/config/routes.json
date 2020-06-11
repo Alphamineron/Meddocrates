@@ -18,6 +18,14 @@
     },
     {
       "method": "GET",
+      "path": "/sales/tsalesdom/:medUID",
+      "handler": "sale.tsalesdom",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/sales/count",
       "handler": "sale.count",
       "config": {
