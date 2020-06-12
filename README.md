@@ -1,9 +1,13 @@
 # Meddocrates
-`Meddocrates is a wordplay by combining Medicine and Hippocrates, Father of Modern Medicine`
-
-A retail management software for a pharmacy, using Strapi and vanilla Frontend.
+A retail management software for a pharmacy, using Strapi and vanilla Frontend. `Meddocrates is a wordplay by combining Medicine and Hippocrates, Father of Modern Medicine`
 
 
+<div style="text-align:center">
+  <p align="center">
+    <img src="screenshots/demo.gif">
+    <p align="center"><sup>Animated Demo of the App</sup></p>
+  </p>
+</div>
 
 
 ## Installation Instructions
