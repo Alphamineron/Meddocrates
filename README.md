@@ -12,20 +12,20 @@ Execute the following commands in terminal, make sure you have npm & node instal
 
 **First**, you have to build the Backend on your device. Follow the following steps in a terminal window:
 
-`git clone https://github.com/Alphamineron/Meddocrates.git`
-`cd Meddocrates`
-`cd backend`
-`npm install`
-`npm run strapi build`
-`npm run strapi start`
+1. `git clone https://github.com/Alphamineron/Meddocrates.git`
+2. `cd Meddocrates`
+3. `cd backend`
+4. `npm install`
+5. `npm run strapi build`
+6. `npm run strapi start`
 
 > If you require username and password for entering into strapi admin dashboard then use these credentials - admin:password - respectively.
 
 **Second**, for frontend hosting, please follow the following steps:
 
-`cd Meddocrates`
-`npm install`
-`node server.js`
+1. `cd Meddocrates`
+2. `npm install`
+3. `node server.js`
 
 The system would inform you that the "Server is Starting" and "Server is listening on port: `5500`".
 
