@@ -21,10 +21,6 @@ Execute the following commands in terminal, make sure you have npm & node instal
 
 > If you require username and password for entering into strapi admin dashboard then use these credentials - admin:password - respectively.
 
-Strapi Hosting (BACKEND): `http://localhost:1337/`
-
-Meddocrates Hosting (FRONTEND): `http://localhost:5500/frontend/`
-
 **Second**, for frontend hosting, please follow the following steps:
 
 `cd Meddocrates`
@@ -35,3 +31,9 @@ The system would inform you that the "Server is Starting" and "Server is listeni
 
 1. Open your browser of choice and go to the following URL: `http://localhost:5500/frontend/`
 2. To ensure that the app works properly, please make sure that the backend server is running at URL: `http://localhost:1337/`
+
+
+## Important Endpoints
+Strapi Hosting (BACKEND): `http://localhost:1337/`
+
+Meddocrates Hosting (FRONTEND): `http://localhost:5500/frontend/`
