@@ -21,7 +21,7 @@ module.exports = {
             
             if (typeof result["MedUID"]["id"] === 'undefined') {
                 strapi.query('sale').delete({ id: result["id"] });
-                console.info("Removing Sale Record with id:" + result["id"]);
+                console.info("Removing Sale Record with id {" + result["id"] + "}");
             }
 
             // Below code is for maintaining the inventory/racks upon a sale or discarding a sale if it exceeds space
@@ -49,6 +49,7 @@ module.exports = {
                         }
                         else {
                             strapi.query('sale').delete({ id: result["id"] });
+                            console.info("Removing Sale Record with id {" + result["id"] + "} due to [out of stock]");
                         }
                     }).catch ((error) => {
                         console.log('Error: ', error);
