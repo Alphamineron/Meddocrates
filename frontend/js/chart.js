@@ -1,11 +1,12 @@
 $(function() {
-   statsReady()
+   chartReady()
 });
 
 let tsalesdom_data
+var chart
 
-function statsReady() {
-    fetch("http://localhost:1337/sales/tsalesdom/-1")
+function chartReady(id = -1) {
+    fetch("http://localhost:1337/sales/tsalesdom/" + id)
         .then((response) => response.json())
         .then(function (data) {
             tsalesdom_data = data;
@@ -94,7 +95,7 @@ var options = {
       }
     };
 
-    var chart = new ApexCharts(document.querySelector("#timeline-chart"), options);
+    chart = new ApexCharts(document.querySelector("#timeline-chart"), options);
     chart.render();
 }
 

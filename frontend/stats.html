@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stats</title>
-  <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
-  <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+  <!-- <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script> -->
+  <!-- <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script> -->
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'>
@@ -34,22 +34,22 @@
     
     <div class="parent">
       <div class="left">
-        <form>
+        <form class="1">
             <div class="group">
-                <input type="date" required>
+                <input type="date" name="Date" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <!-- <label>Date</label> -->
             </div>
 
             <div class="group">
-                <input type="text">
+                <input type="text" name="MedUID">
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label class="notReq">MedUID</label>
             </div>
 
-            <button class="Submit">Query</button>
+            <button class="Submit btn-roed">Query</button>
         </form>
       </div>
       <div class="right">
@@ -63,15 +63,15 @@
     </div>
     <div class="small-parent">
       <div class="left">
-        <form>
+        <form class="2">
             <div class="group">
-                <input type="text" required>
+                <input type="text" name="MedUID" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>MedUID</label>
             </div>
 
-            <button class="Submit">Query</button>
+            <button class="Submit btn-chart">Query</button>
         </form>
       </div>
     </div>
@@ -83,6 +83,7 @@
   <script src="js/navbarScroll.js"></script>
   <script src='https://cdn.jsdelivr.net/npm/apexcharts'></script>
   <script src="js/chart.js"></script>
+  <script src="js/stats.js"></script>
 
 
 </body>
