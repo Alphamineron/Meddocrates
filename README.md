@@ -52,9 +52,8 @@ Meddocrates Hosting (FRONTEND): `http://localhost:5500/frontend/`
 
 ## Screenshots
 
-![](screenshots/TvyIhBI.png)
-![](screenshots/JvPsAN9.png)
-![](screenshots/A1CtFgV.png)
-![](screenshots/0iQ459f.png)
-![](screenshots/BiRmt1r.png)
-![](screenshots/Mn4IkFM.png)
+_                          |       _
+:-------------------------:|:-------------------------:
+![](screenshots/TvyIhBI.png)  |  ![](screenshots/JvPsAN9.png)
+![](screenshots/A1CtFgV.png)  |  ![](screenshots/0iQ459f.png)
+![](screenshots/BiRmt1r.png)  |  ![](screenshots/Mn4IkFM.png)
