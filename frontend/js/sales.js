@@ -70,6 +70,10 @@ const postForm = (payload) => {
                         });
 };
 
+const checkID = (id) => {
+    return fetch("http://localhost:1337/medicines/c/" + id);
+}
+
 async function POSTsales(event) {
     // Fetch data from the input fields or HTML form
     var formData = $('form').serializeArray().reduce(function(obj, item) {
@@ -97,6 +101,20 @@ async function POSTsales(event) {
     //     }
     // };
     console.log(payload);
+
+    // Check if the payload is valid
+    fetch("http://localhost:1337/medicines/c/" + formData["MedUID"])
+        .then((response) => response.json())
+        .then(function (data) {
+            renderROED(data);
+        });
+    const checkIDRes = await checkID(formData["MedUID"]);
+    const boolData = await checkIDRes.json();
+
+    if(boolData["valid"] === false) {
+        alert("Invalid MedUID: No such medicine record exists in the Database! \n\nTry Again...");
+        return
+    }
 
     // POST data to a JSON payloads accepting endpoint
     // fetch("http://localhost:1337/sales/", {
