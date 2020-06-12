@@ -22,6 +22,7 @@ Execute the following commands in terminal, make sure you have npm & node instal
 > If you require username and password for entering into strapi admin dashboard then use these credentials - admin:password - respectively.
 
 Strapi Hosting (BACKEND): `http://localhost:1337/`
+
 Meddocrates Hosting (FRONTEND): `http://localhost:5500/frontend/`
 
 **Second**, for frontend hosting, please follow the following steps:
