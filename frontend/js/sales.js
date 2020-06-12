@@ -79,6 +79,7 @@ function updateCartTotal() {
 
     total=Math.round(total*100)/100
     document.getElementsByClassName('cart-total-price')[0].innerText='$'+total
+    actionIfEmpty()
 }
 
 function quantitychanged(event){
@@ -128,4 +129,19 @@ function addItemToCart(title, price ,quantity){
     cartItems.append(cartRow)
     cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantitychanged)
+}
+
+function actionIfEmpty() {
+    let cart = document.getElementsByClassName("cart-items")[0];
+    console.log(cart);
+	if (cart.childElementCount > 0) {
+		// Gets rid of the Cart Empty msg if the cart is not empty
+		document.getElementsByClassName("cart-empty")[0].remove();
+	}
+	else {
+		let cartEmptyMsg = document.createElement("p");
+		cartEmptyMsg.innerText = "NO ITEMS RECORDED";
+		cartEmptyMsg.classList.add("cart-empty");
+		cart.append(cartEmptyMsg);	// Injecting
+	}
 }

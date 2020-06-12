@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
-@import url("https://fonts.googleapis.com/css?family=Metal+Mania");
 
 @font-face {
     font-family: "Booter - Zero Zero";
@@ -10,12 +9,9 @@
 }
 
 
-
-
 *{
     box-sizing:border-box;
     font-family: Raleway;
-    color:#777;
 }
 
 
@@ -23,15 +19,15 @@
     text-align: center;
     font-size: 2.5em;
     font-weight: normal;
-    font-family: "metal mania";
-    color: #333;
+    letter-spacing: 10px;
+    color: rgb(255, 255, 255);
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .content-section{
     margin: 1em;
-   
-
 }
+
 .container {
     max-width: 900px;
     margin: 0 auto;
@@ -62,16 +58,6 @@
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-.btn-play{
-    display: block;
-    margin: 0 auto;
-    color: purple;
-    border-radius: 50%;
-    padding: 0;
-    width: 50px;
-    height: 50px;
-    
-}
 
 .btn-primary{
     color:white;
@@ -88,17 +74,18 @@
 .cart-header{
     font-weight: bold;
     font-size: 1.25em;
-    color: #333;
+    color: rgb(0, 228, 152); 
     
 }
 
 .cart-column{
     display: flex;
     align-items: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
     margin-right: 1.5em;
     padding-bottom: 10px;
     margin-top: 10px;
+    color: white;
 }
 
 .cart-row{
@@ -110,14 +97,23 @@
 }
 
 .cart-price{
-    width: 20%;
-    color: #333;
+    width: 25%;
+    color: rgb(255, 255, 255);
     margin-left: .5em;
     font-size: 1.2em;
 }
+.cart-header.cart-price {
+    color: white;
+}
 
 .cart-quantity{
-    width:35%;
+    width:30%;
+}
+.cart-header.cart-quantity {
+    color: white;
+}
+.no-right-margin {
+    margin-right: 0 !important; 
 }
 
 .cart-item-image{
@@ -126,7 +122,7 @@
 }
 
 .cart-item-title{
-    color: #333;
+    color: rgb(0, 228, 152);
     margin-left: .5em;
     font-size: 1.2em;
 
@@ -134,7 +130,7 @@
 
 .btn-danger{
     color: white;
-    background-color:#EB5757;
+    background-color:#ff0000;
     border: none;
     border-radius: .3em;
     font-weight: bold;
@@ -142,16 +138,26 @@
 }
 
 .btn-danger:hover{
-    background-color: #b84c4c;
+    background-color: #ff2f2f;
 
 }
+
+.cart-empty {
+	text-align: center;
+	margin: 40px;
+    font-weight: bold;
+    text-transform: capitalize;
+    letter-spacing: 8px;
+    color: rgb(0, 228, 152);
+}
+
 
 .cart-quantity-input{
     height: 34px;
     width: 50px;
-    border: 1px solid purple;
+    border: 1px solid rgb(0, 228, 152);
     border-radius: 5px;
-    background-color: #eee;
+    background-color: transparent;
     padding: 0;
     text-align: center;
     margin-right: 25px;
@@ -161,31 +167,29 @@
 .cart-total{
     text-align: end;
     margin-top: 10px;
-    margin-right: 40px;
+    margin-right: 50px;
 }
 
 .cart-total-title{
     font-weight: bold;
     font-size: 1.5em;
-    color: black;
+    color: rgb(255, 249, 220);
     margin-right: 20px;
 }
 
 .cart-total-price{
     font-size: 1.2em;
-    color: #333;
+    color: white;
 
 }
 
 .btn-purchase{
     display: block;
     margin: 40px auto 80px auto;
-    font-size: 2em;
-
 }
 
 .cart-row:last-child{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
 }
 
 .cart-row:last-child .cart-column{
