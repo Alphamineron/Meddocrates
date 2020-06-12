@@ -1,33 +1,44 @@
 if(document.readyState=="loading"){
-    document.addEventListener("DOMContentLoaded",ready)
-
+    document.addEventListener("DOMContentLoaded",salesMain)
 }
-else{
-    ready()
-}
-
-data={
-    "id": 42,
-    "SaleDate": "2020-06-02",
-    "MedUID": {
-        "id": 6,
-        "Name": "Azee 500",
-        "Desc": "Azee 500 Tablet is an antibiotic used to treat various types of bacterial infections of the respiratory tract, ear, nose, throat, lungs, skin, and eye in adults and children. It is also effective in typhoid fever and some sexually transmitted diseases like gonorrhea.",
-        "Price": 45,
-        "ExpiryDate": "2021-11-10",
-        "vendor": 3,
-        "created_at": "2020-06-10T17:15:09.392Z",
-        "updated_at": "2020-06-11T07:22:59.698Z"
-    },
-    "QuantitySold": 10,
-    "Revenue": null,
-    "created_at": "2020-06-11T14:00:27.128Z",
-    "updated_at": "2020-06-11T14:00:27.172Z"
+else {
+    salesMain()
 }
 
-function ready() {
+$( "form" ).submit(function( event ) {
+    event.preventDefault();
+    // POSTsales();
+});
+
+
+let PostResponse;
+// {
+//     "id": 42,
+//     "SaleDate": "2020-06-02",
+//     "MedUID": {
+//         "id": 6,
+//         "Name": "Azee 500",
+//         "Desc": "Azee 500 Tablet is an antibiotic used to treat various types of bacterial infections of the respiratory tract, ear, nose, throat, lungs, skin, and eye in adults and children. It is also effective in typhoid fever and some sexually transmitted diseases like gonorrhea.",
+//         "Price": 45,
+//         "ExpiryDate": "2021-11-10",
+//         "vendor": 3,
+//         "created_at": "2020-06-10T17:15:09.392Z",
+//         "updated_at": "2020-06-11T07:22:59.698Z"
+//     },
+//     "QuantitySold": 10,
+//     "Revenue": null,
+//     "created_at": "2020-06-11T14:00:27.128Z",
+//     "updated_at": "2020-06-11T14:00:27.172Z"
+// }
+
+function salesMain() {
+    var addSaleButtons = document.getElementsByClassName('shop-item-button')
+    for(var i=0 ;i<addSaleButtons.length; i++){
+        var button = addSaleButtons[i]
+        button.addEventListener('click', POSTsales)
+    }
+
     var RemoveCartItemButtons = document.getElementsByClassName('btn-danger')
-        /* console.log(RemoveCartItemButtons) */
     for(var i=0 ;i<RemoveCartItemButtons.length; i++){
         var button = RemoveCartItemButtons[i]
         button.addEventListener('click' , removeCartItem)
@@ -40,13 +51,77 @@ function ready() {
         input.addEventListener('change',quantitychanged)
     }
     
-    var addToCartButtons=document.getElementsByClassName('shop-item-button')
-    for(var i=0 ; i<addToCartButtons.length;i++){
-        var button=addToCartButtons[i]
-        button.addEventListener('click',addToCartClicked)
-    }
+    // var addToCartButtons=document.getElementsByClassName('shop-item-button')
+    // for(var i=0 ; i<addToCartButtons.length;i++){
+    //     var button=addToCartButtons[i]
+    //     button.addEventListener('click',addToCartClicked)
+    // }
 
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click',purchaseClicked)
+}
+
+const postForm = (payload) => {
+    return fetch("http://localhost:1337/sales/", {
+                            method: "POST",
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(payload)
+                        });
+};
+
+async function POSTsales(event) {
+    // Fetch data from the input fields or HTML form
+    var formData = $('form').serializeArray().reduce(function(obj, item) {
+        obj[item.name] = item.value;
+        return obj;
+    }, {});
+
+    // Cook Data
+    var d = new Date();
+    var ms = (new Date(d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate())).getTime() - 66600000 + 86400000;
+    var SaleDate = new Date(ms).toISOString().split("T")[0];
+
+    let payload = {
+        "SaleDate": SaleDate,
+        "QuantitySold": formData["Quantity"],
+        "MedUID": {
+            "id": formData["MedUID"]
+        }
+    };
+    // payload = {
+    //     "SaleDate": "2020-06-02",
+    //     "QuantitySold": 100,
+    //     "MedUID": {
+    //         "id": 10
+    //     }
+    // };
+    console.log(payload);
+
+    // POST data to a JSON payloads accepting endpoint
+    // fetch("http://localhost:1337/sales/", {
+    //                         method: "POST",
+    //                         headers: {
+    //                             'Content-Type': 'application/json'
+    //                         },
+    //                         body: JSON.stringify(payload)
+    //                     })
+    // .then(function(res)  { return res.json(); })
+    // .then(function(data) { console.log(data) });
+    const res = await postForm(payload);
+    const data = await res.json();
+
+    console.log(data);
+    PostResponse = data;
+
+    addToCartClicked(event);
+}
+
+function deleteSalesRecord(id) {
+    return fetch("http://localhost:1337/sales/" + id, {
+        method: 'delete'
+    })
+    .then(response => response.json());
 }
 
 function purchaseClicked(){
@@ -95,9 +170,9 @@ function addToCartClicked(event) {
     var button = event.target
     var shopItem = button.parentElement.parentElement
     
-    var title = data["MedUID"]["Name"]
-    var price = data["MedUID"]["Price"]
-    var quantity=data["QuantitySold"]
+    var title = PostResponse["MedUID"]["Name"]
+    var price = PostResponse["MedUID"]["Price"]
+    var quantity=PostResponse["QuantitySold"]
     // var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
     addItemToCart(title, price,quantity )
     updateCartTotal()
@@ -112,6 +187,7 @@ function addItemToCart(title, price ,quantity){
     for(var i=0 ; i<cartItemNames.length;i++){
         if(cartItemNames[i].innerText==title){
             alert("This Item Is Already In The Cart")
+            deleteSalesRecord(PostResponse["id"]);
             return
         }
     }
@@ -121,7 +197,7 @@ function addItemToCart(title, price ,quantity){
                         </div>
                         <span class="cart-price cart-column">$${price}</span>
                         <div class="cart-quantity cart-column">
-                            <input class="cart-quantity-input" type="number" value="${quantity}">
+                            <input class="cart-quantity-input" type="number" readonly="readonly" value="${quantity}">
                             <button class="btn btn-danger " type="button">REMOVE</button>
                         </div>
     `
@@ -133,7 +209,6 @@ function addItemToCart(title, price ,quantity){
 
 function actionIfEmpty() {
     let cart = document.getElementsByClassName("cart-items")[0];
-    console.log(cart);
 	if (cart.childElementCount > 0) {
 		// Gets rid of the Cart Empty msg if the cart is not empty
 		document.getElementsByClassName("cart-empty")[0].remove();
